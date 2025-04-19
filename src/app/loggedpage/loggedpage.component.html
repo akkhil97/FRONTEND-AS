@@ -1,0 +1,47 @@
+<div class="container">
+  <!-- Skills Section -->
+  <div class="skillsection">
+    <h2>Skills</h2>
+    <input type="text" [(ngModel)]="newSkill" placeholder="Enter a skill" />
+    <button (click)="editingSkillId ? updateSkill() : addSkill()">
+      {{ editingSkillId ? 'Update Skill' : 'Add Skill' }}
+    </button>
+    <ul>
+      <li *ngFor="let skill of skills">
+        {{ skill.skillName }} <!-- Use skill.skillName instead of skill.name -->
+        <button (click)="editSkill(skill)">Edit</button>
+        <button (click)="deleteSkill(skill.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="section">
+    <h2>Projects</h2>
+    <input type="text" [(ngModel)]="newProjectTitle" placeholder="Project title" />
+    <textarea [(ngModel)]="newProjectDescription" placeholder="Project description"></textarea>
+    <button (click)="editingProjectId ? updateProject() : addProject()">
+      {{ editingProjectId ? 'Update Project' : 'Add Project' }}
+    </button>
+
+    <ul>
+      <li *ngFor="let project of projects">
+        <strong>{{ project.title }}</strong>: {{ project.description }}
+        <br />
+        <button (click)="editProject(project)">Edit</button>
+        <button (click)="deleteProject(project.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Messages Section -->
+  <div class="section">
+    <h2>Visitors Messages</h2>
+    <ul>
+      <li *ngFor="let message of userMessages">
+        <strong>{{ message.name }}</strong> ({{ message.email }}):<br />
+        "{{ message.message }}"
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,179 @@
+/* Global Reset & Font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 40px 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Main container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Section Cards */
+.skillsection {
+  background-color: #000000;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin: 20px 0 20px 0;
+}
+
+.skillsection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  background-color: #000000;
+}
+
+/* Section Headings */
+.skillsection h2 {
+  font-size: 1.8rem;
+  color: #cfbcff;
+  margin-bottom: 20px;
+  border-left: 4px solid #ffffff;
+  padding-left: 12px;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+.skillsection ul button{
+  width:17%;
+}
+
+.skillsection ul li{
+  color: #cfbcff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inputs & Textareas */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ffffff;
+  background-color: #333;
+}
+
+/* Buttons */
+button {
+  background-color: #c5c5c5;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  color: white;
+  background-color: #464364;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.section h2{
+  color: #cfbcff;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* List Styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  background: #2a2a2a;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+li:hover {
+  background-color: #313131;
+  transform: translateX(5px);
+}
+
+.section ul button {
+  display: inline-flex;
+  width: 17%;
+  margin: 0 auto; /* This centers the button itself */
+  justify-content: center; /* This centers the text horizontally inside the button */
+  align-items: center;      /* This centers the text vertically inside the button */
+  text-align: center;
+}
+
+
+
+
+/* Strong text styling */
+li strong {
+  color: #cfbcff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .section {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

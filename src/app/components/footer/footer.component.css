@@ -1,0 +1,33 @@
+.custom-footer {
+  position: relative;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+  font-size: 14px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.5);
+  animation: slideUp 1s ease-out;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-top: 2px solid rgba(63, 24, 114, 0.4);
+  box-shadow: 0 0 10px rgba(37, 117, 252, 0.2);
+}
+
+.custom-footer:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

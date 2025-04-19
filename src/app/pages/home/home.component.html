@@ -1,0 +1,63 @@
+<div class="hero">
+  <h2>JAVA Full Stack Developer</h2>
+  <h1>Hello, I'm Akhil Sai Ram</h1>
+</div>
+
+<section class="about">
+  <div class="aboutcontainer">
+    <img src="https://static.vecteezy.com/ti/photos-gratuite/t2/40154161-ai-genere-homme-en-utilisant-portable-ordinateur-sur-canape-photo.jpg" alt="Profile Image" class="profile-image">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I am a dedicated and detail-oriented Java Full Stack Developer with a strong foundation in both frontend and backend technologies. I specialize in building scalable and efficient web applications using Angular and TypeScript on the frontend, and Java with Spring Boot on the backend. My experience includes creating dynamic user interfaces, implementing RESTful APIs, and integrating databases to deliver seamless user experiences.
+      </p>
+      <p>
+        Over the course of my journey, I have successfully completed multiple web development projects, ranging from simple websites to complex enterprise-level applications. My work reflects a commitment to clean code, intuitive design, and performance optimization.
+      </p>
+      <p>
+        Beyond coding, I bring excellent communication, problem-solving, and collaboration skills—refined through various academic, personal, and team-based projects. I’m quick to adapt to new technologies and environments, and I constantly strive to expand my knowledge and stay updated with industry trends.
+      </p>
+      <p>
+        I thrive in fast-paced, challenging settings and am driven by the desire to create impactful digital solutions. Whether working independently or as part of a team, I’m always focused on delivering quality work and achieving project goals efficiently.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="skills">
+  <h2>My Skills</h2>
+  <div class="skill-list">
+    <span *ngFor="let skill of skills">{{ skill.skillName }}</span>
+  </div>
+</section>
+
+<section class="projects">
+  <h2>My Projects</h2>
+  <div *ngFor="let project of projects" class="project">
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.description }}</p>
+  </div>
+</section>
+
+<section  id="contact" class="contact-section">
+  <div class="contact-wrapper">
+    <h2>Let's Connect</h2>
+    <p class="contact-subtitle">I'd love to hear from you. Feel free to reach out!</p>
+
+    <div class="contact-info">
+      <p><strong><i class="fas fa-user"></i> Email:</strong> asrch25&#64;gmail.com</p>
+      <p><strong><i class="fa-solid fa-phone"></i> Phone:</strong> +91 9100256511</p>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="text" [(ngModel)]="user.name" name="name" placeholder="Your Name" required />
+        <input type="email" [(ngModel)]="user.email" name="email" placeholder="Your Email" required />
+      </div>
+      <textarea [(ngModel)]="user.message" name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+

@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="logo">AkHiL</div>
+  <ul>
+    <li *ngIf="!authService.isLoggedIn() && !isLoggedPage()">
+      <a routerLink="/">Home</a>
+    </li>
+    <li *ngIf="!authService.isLoggedIn() && !isLoggedPage()">
+      <a (click)="scrollToContact()" style="cursor: pointer;">Contact</a>
+    </li>
+    <li *ngIf="!authService.isLoggedIn()">
+      <a routerLink="/login">Admin</a>
+    </li>
+    <li *ngIf="authService.isLoggedIn()">
+      <a (click)="openSettings()" style="cursor: pointer;">Admin Settings</a>
+    </li>
+    <li *ngIf="authService.isLoggedIn()">
+      <a class="logout-link" (click)="logout()" style="cursor: pointer;">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Admin Settings Popup Overlay -->
+<div class="settings-overlay" *ngIf="showSettings">
+  <div class="settings-popup">
+    <span class="close-btn" (click)="closeSettings()">✖</span>
+    <h2>Admin Settings</h2>
+    <div class="form-group">
+      <label for="username">New Username:</label>
+      <input id="username" [(ngModel)]="adminUsername" placeholder="Enter new username" />
+    </div>
+    <div class="form-group">
+      <label for="password">New Password:</label>
+      <div class="password-wrapper">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          id="password"
+          [(ngModel)]="adminPassword"
+          placeholder="Enter new password"
+        />
+      </div>
+    </div>
+    <button (click)="saveSettings()">Save</button>
+  </div>
+</div>
